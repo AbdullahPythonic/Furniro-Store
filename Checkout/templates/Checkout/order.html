@@ -1,0 +1,67 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Store</title>
+    <link rel="stylesheet" href="{% static 'Checkout/order.css' %}">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="store-name">Furniro</h1>
+            <nav class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'all_products'%}">Shop</a>
+                <a href="{% url 'cart_detail' %}">Cart</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="shop-banner">
+        <div class="overlay">
+            <h2>Checkout</h2>
+        </div>
+    </section><br><br>
+
+        <h2>Billing details</h2>
+        <div class="checkout-wrapper">
+
+            <div class="billing-details">
+                <form method="post" action="{% url 'checkout' %}">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="error">{{ field.errors }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <ul class="cart-items">
+                            {% for item in cart_items %}
+                                <li>
+                                    <span>{{ item.product.name }} x <strong>{{ item.quantity }}</strong></span>
+
+                                    <span>Rs. {{ item.product.price }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <p class="total">Total: <strong>Rs. {{ total_price }}</strong></p>
+
+                        <a href="{% url "order_success" %}"><button type="submit" class="place-order">Place Order</button></a>
+                    </div>
+
+                </div>
+                <footer class="footer">
+                    <p>&copy; 2024 Furniro. All rights reserved.</p>
+                </footer>
+</body>
+</html>

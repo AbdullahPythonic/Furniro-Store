@@ -1,0 +1,80 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Store</title>
+    <link rel="stylesheet" href="{% static 'cart/cart-detail.css' %}">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="store-name">Furniro</h1>
+            <nav class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'all_products'%}">Shop</a>
+                <a href="{% url 'cart_detail' %}">Cart</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="shop-banner">
+        <div class="overlay">
+            <h2>Cart</h2>
+        </div>
+    </section><br><br>
+
+    <div class="cart-content">
+
+        <div class="cart-items">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_item %}
+                    <tr>
+                        <td class="product-info">
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="product-img">
+                            <span>{{ item.product.name }}</span>
+                        </td>
+                        <td>{{ item.product.price|floatformat:2 }}</td>
+                        <td>
+                            <input value="{{ item.quantity }}" class="quantity-input">
+                        </td>
+                        <td>{{ item.total_price|floatformat:2 }}</td>
+                        <td><a href="{% url 'delete_from_cart' item.id %}"><button class="delete-btn">🗑️</button></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cart-totals">
+            <h3>Cart Totals</h3>
+            <div class="total-line">
+                <span>Subtotal</span>
+                <span>Rs:{{total_price|floatformat:2 }}</span>
+            </div>
+            <div class="total-line total">
+                <span>Total</span>
+                <span>Rs:{{ total_price|floatformat:2 }}</span>
+            </div>
+            <a href="{% url 'checkout' %}"><button class="checkout-btn">Check Out</button></a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Furniro. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Store</title>
+    <link rel="stylesheet" href="{% static 'Checkout/order-success.css' %}">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1 class="store-name">Furniro</h1>
+            <nav class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'all_products'%}">Shop</a>
+                <a href="{% url 'cart_detail' %}">Cart</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <br><br>
+    <div class="success-container">
+        <div class="success-message">
+            <h1>Thank you for your order!</h1>
+            <p>Your order has been successfully placed. We’re processing it and will notify you when it's on the way.</p>
+        </div>
+
+        <div class="order-summary">
+            <h2>Order Detail</h2>
+            <p class="total">Total Paid: <strong>Rs. {{ total_price }}</strong></p>
+        </div>
+
+        <a href="{% url 'all_products' %}" class="more-shopping-btn">Continue Shopping</a>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Furniro. All rights reserved.</p>
+    </footer>
+</body>
+</html>
