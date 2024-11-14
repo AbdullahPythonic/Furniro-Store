@@ -1,0 +1,25 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'Checkout/contact-page.css' %}">
+</head>
+<body>
+    <div class="contact-container">
+        <h1>Contact Me</h1><br>
+        <p><strong>If you have any questions or would like to work together, please reach out!</strong></p>
+
+        <div class="contact-info">
+            <p><strong>Name:</strong> Muhammad Abdullah</p>
+            <p><strong>Email:</strong> abdullahkhaliq114@gmail.com</p>
+            <p><strong>Phone:</strong> +923045705613</p>
+            <p><strong>Location:</strong> Lahore, Pakistan</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abdullah-khaliq-8a83a9300/" target="_blank">View LinkedIn</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/AbdullahPythonic" target="_blank">View GitHub</a></p>
+        </div>
+        <a href="{% url 'home' %}" class="back-to-shop">Back to Home</a>
+    </div>
+</body>
+</html>
