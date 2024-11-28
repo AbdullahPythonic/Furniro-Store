@@ -63,7 +63,6 @@ Each app has its own set of models. Here’s a summary:
 ## Screenshots
 
 - **Home page**
-
 ![Homepage Screenshot](screenshots/home.jpeg)
 
 - **All Products**
