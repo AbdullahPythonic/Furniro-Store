@@ -63,26 +63,25 @@ Each app has its own set of models. Here’s a summary:
 ## Screenshots
 
 - **Home page**
-
-![Homepage Screenshot](screenshots/home.jpeg)
+![Homepage Screenshot](screenshots/home.png)
 
 - **All Products**
-![All Products Screenshot](screenshots/shop.jpeg)
+![All Products Screenshot](screenshots/shop.png)
 
 - **Categorized Products**
-![Categorizes Screenshot](screenshots/categorized-product.jpeg)
+![Categorizes Screenshot](screenshots/categorized-product.png)
 
 - **Product Detail**
-![product detail Screenshot](screenshots/product-detail.jpeg)
+![product detail Screenshot](screenshots/product-detail.png)
 
 - **Cart**
-![Cart Screenshot](screenshots/cart.jpeg)
+![Cart Screenshot](screenshots/cart.png)
 
 - **Checkout**
-![Checkout Screenshot](screenshots/checkout.jpeg)
+![Checkout Screenshot](screenshots/checkout-page.png)
 
 - **Order Success**
-![Order Screenshot](screenshots/order-success.jpeg)
+![Order Screenshot](screenshots/order-success.png)
 
 - **Contact Us**
 ![Contact Screenshot](screenshots/contact.PNG)
