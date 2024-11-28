@@ -69,7 +69,7 @@ Each app has its own set of models. Here’s a summary:
 ![All Products Screenshot](screenshots/shop.png)
 
 - **Categorized Products**
-![Categorizes Screenshot](screenshots/categorized-product.png)
+![Categorizes Screenshot](screenshots/categorized-products.png)
 
 - **Product Detail**
 ![product detail Screenshot](screenshots/product-detail.png)
